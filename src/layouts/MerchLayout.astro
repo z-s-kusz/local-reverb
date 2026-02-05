@@ -1,0 +1,28 @@
+---
+import MerchListing from "../components/MerchListing.astro";
+import Main from "../layouts/Main.astro";
+import type { Merch } from "../types/merch";
+
+const { title, queryString } = Astro.props;
+let merch: Merch[] = [];
+let errorMessage = "";
+
+try {
+    const response = await fetch(`${Astro.url.origin}/guitar-center?category=${queryString}`);
+    const jsonData = await response.json();
+    merch = JSON.parse(jsonData).data;
+} catch (error) {
+    errorMessage = "Error getting items, see console";
+}
+---
+
+<Main>
+    <h2>{title}</h2>
+    {errorMessage && <p>{errorMessage}</p>}
+
+    {
+        merch.map((item) => {
+            return <MerchListing item={item} />;
+        })
+    }
+</Main>

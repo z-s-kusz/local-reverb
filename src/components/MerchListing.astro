@@ -1,0 +1,19 @@
+---
+const { item } = Astro.props;
+---
+
+<section>
+    <img src={item.imageUrl} alt={`Badly taken photo of ${item.name}.`} />
+    <a href={item.link}>{item.name}</a>
+    <p>{item.price}</p>
+    <p>{item.location}</p>
+</section>
+
+<style>
+    a {
+        display: block;
+    }
+    p {
+        margin: 0;
+    }
+</style>

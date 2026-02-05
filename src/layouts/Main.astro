@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/png" href="/guitar-96.png" />
+        <meta name="generator" content={Astro.generator} />
+        <title>Local Reverb</title>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/gh/kimeiga/bahunya/dist/bahunya.min.css"
+        />
+        <meta property="og:title" content="Local Reverb" />
+        <meta
+            property="og:description"
+            content="Check out used guitar gear in St. Paul"
+        />
+        <meta property="og:url" content="https://local-reverb.netlify.app" />
+        <meta property="og:type" content="website" />
+    </head>
+    <body>
+        <h1>St. Paul Reverb</h1>
+        <section>
+            <a href="/">Used Gear</a>
+            <a href="/guitars">Used Guitars</a>
+            <a href="/amps-and-effects">Used Amps & Effects</a>
+            <br />
+            <a href="https://musicgoround.com/shop-all-products/?brand=51">
+                Music Go Round
+            </a>
+            <a href="https://www.guitarcenter.com/Used?icid=LP8673&filters=stores:Maple%20Grove|Bloomington|Oakdale|Twin%20Cities&Ns=cD&recsPerPage=96">
+                Guitar Center - All Used Gear"
+            </a>
+        </section>
+
+        <main>
+            <slot />
+        </main>
+        <footer>
+            <p>Zach Kusz - 2026</p>
+        </footer>
+
+        <style>
+            body {
+                margin-top: 0;
+            }
+            a {
+                display: block;
+            }
+        </style>
+    </body>
+</html>
