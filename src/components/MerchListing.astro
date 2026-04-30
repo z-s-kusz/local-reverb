@@ -3,7 +3,9 @@ const { item } = Astro.props;
 ---
 
 <section>
-    <img src={item.imageUrl} alt={`Badly taken photo of ${item.name}.`} />
+    <a href={item.link} class="product-image">
+        <img src={item.imageUrl} alt={`Badly taken photo of ${item.name}.`} />
+    </a>
     <a href={item.link}>{item.name}</a>
     <p>{item.price}</p>
     <p>{item.location}</p>
@@ -15,5 +17,11 @@ const { item } = Astro.props;
     }
     p {
         margin: 0;
+    }
+    @media (width <= 560px) {
+        .product-image {
+            display: grid;
+            place-items: center;
+        }
     }
 </style>
